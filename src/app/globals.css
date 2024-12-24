@@ -31,21 +31,7 @@ body {
   -webkit-backdrop-filter: blur(5px);
 }
 
-
-/* RotatingText.css */
-
-.rotating-text-wrapper {
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 .rotating-text-wrapper h2 {
-  font-size: 2.5em;
-  margin: 0;
   padding: 0.3em;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   animation-duration: 6s;
@@ -114,5 +100,39 @@ body {
 @media screen and (max-width: 576px) {
   .rotating-text-wrapper {
     font-size: 0.7rem;
+  }
+}
+
+
+.logo-slider {
+  overflow: hidden;
+  width: 1536px; /* Adjust as per your design */
+  display: flex;
+  align-items: center;
+}
+
+.logos-slide {
+  display: flex;
+  gap: 20px; /* Space between logos */
+  animation: scroll 15s linear infinite;
+}
+
+.logos-slide img {
+  height: 60px; /* Adjust as needed */
+  object-fit: contain;
+}
+
+.logos-slide::before,
+.logos-slide::after {
+  content: "";
+  display: flex;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
