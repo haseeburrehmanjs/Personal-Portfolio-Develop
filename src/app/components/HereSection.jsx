@@ -1,12 +1,14 @@
+import RotatingText from "./HereSectionDesign";
 
 const HereSection = () => {
   return (
     <div
-      className="bg-cover w-full h-[100vh] flex justify-center items-center"
+      className="bg-no-repeat bg-cover bg-center bg-blend-color bg-black bg-opacity-40 w-full h-[100vh] flex justify-center items-center"
       style={{
-        backgroundImage: `url(https://as1.ftcdn.net/v2/jpg/07/74/93/30/1000_F_774933071_5bHDTbMZUtENQBjuaHkcKwWad4cpU5IW.jpg)`,
+        backgroundImage: `url(https://img.freepik.com/premium-photo/101-digital-artwork-showcasing-cybernetic-humanoid-with-intricate-metallic-plating-glowing-energy-conduits-photorealistic-highquality-detailed-design-2-energy-distribution-visualization_1310094-87497.jpg?w=826)`,
       }}
     >
+      <RotatingText/>
     </div>
   );
 };
