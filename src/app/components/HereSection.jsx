@@ -12,7 +12,8 @@ const HereSection = () => {
       >
         <RotatingText />
       </div>
-      <LogoSlider />
+ 
+      <LogoSlider count={4}/>
     </>
   );
 };
