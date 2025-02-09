@@ -2,11 +2,12 @@ import Image from "next/image";
 import haseebProfile from "/public/assets/images/haseeb-profile.png";
 import { ReactIcons } from "@/assets/icons/ReactIcons";
 import PrimaryBtn from "./PrimaryBtn";
+// import '../../assets/css/anima'
 
 const HereSection = () => {
   return (
     <>
-      <div className="relative overflow-hidden h-[578px]">
+      <div className="relative overflow-hidden xl:h-[544px]">
 
         <div className="flex flex-col gap-3 items-center justify-center">
           <h1 className="text-center flex items-center justify-center w-fit text-2xl py-1 px-4 border border-gray-300 rounded-full font-medium font-serif mt-10">
@@ -38,7 +39,7 @@ const HereSection = () => {
         </div>
         <div className="flex items-center justify-center mt-5">
           <div className="absolut w-[500px] h-[500px] bg-[#FF2600] rounded-full mt-10"></div>
-          <div className="absolute bottom-10 z-20 bg-white p-2 rounded-full flex gap-3">
+          <div className="absolute bottom-2 z-20 bg-white p-2 rounded-full flex gap-3">
             <PrimaryBtn
               primaryBtn={true}
               additnalClass={''}
@@ -49,7 +50,7 @@ const HereSection = () => {
             />
           </div>
           <div className="w-96 absolute -mt-40">
-            <Image src={haseebProfile} />
+            <Image alt="haseeb ur rehman frontend developer" src={haseebProfile} />
           </div>
         </div>
 
