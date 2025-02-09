@@ -1,46 +1,47 @@
-import React from 'react';
-import Link from 'next/link'; // Import the Link component
+"use client"
+
+import { useState } from "react";
 
 const Navbar = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [hoverIndex, setHoverIndex] = useState(null);
+
+  const navItems = [
+    { name: "Product", width: 100, left: 60 },
+    { name: "Solutions", width: 110, left: 195 },
+    { name: "Overview", width: 100, left: 337 },
+    { name: "Clients", width: 100, left: 477 },
+  ];
+
   return (
-    <div className="flex justify-center relative  w-full items-center">
-      <div className="w-full md:w-[500px] text-[8px] sm:text-sm md:text-base lg:text-lg py-5 absolute top-0 NavbarClipPathShadowHere NavbarClipPathHere">
-        <div className="container mx-auto flex justify-center">
-          <ul className="flex gap-5 items-center text-white md:text-sm lg:text-1xl">
-            {/* Navigation Links with hover and active border animation */}
-            <li className="relative group">
-              <Link href="/" className="text-white">
-                Home
-              </Link>
-              <span className="absolute top-5 left-0 w-0 h-[2px] bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-            </li>
-            <li className="relative group">
-              <Link href="about" className="text-white">
-                About
-              </Link>
-              <span className="absolute top-5 left-0 w-0 h-[2px] bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-            </li>
-            <li className="relative group">
-              <Link href="contact" className="text-white">
-                Contact Us
-              </Link>
-              <span className="absolute top-5 left-0 w-0 h-[2px] bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-            </li>
-            <li className="relative group">
-              <Link href="project" className="text-white">
-                Project
-              </Link>
-              <span className="absolute top-5 left-0 w-0 h-[2px] bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-            </li>
-            <li className="relative group">
-              <Link href="experience" className="text-white">
-                Experience
-              </Link>
-              <span className="absolute top-5 left-0 w-0 h-[2px] bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div className="flex justify-center items-center mt-2">
+      <nav className="relative flex items-center justify-center px-2 h-[55px] overflow-hidden bg-[#E2DEDE] rounded-full shadow-md gap-10">
+        {navItems.map((item, index) => (
+          <a
+            key={index}
+            href="#"
+            className={`w-[100px] font-semibold uppercase hover:text-white  text-sm text-center relative z-10 transition-colors duration-300 ${
+              activeIndex === index ? "text-white" : "text-black"
+            }`}
+            onClick={() => setActiveIndex(index)}
+            onMouseEnter={() => setHoverIndex(index)}
+            onMouseLeave={() => setHoverIndex(null)}
+          >
+            {item.name}
+          </a>
+        ))}
+        <div
+          className="absolute top-2 h-[40px] bg-[#FF2600] rounded-full z-0 transition-all duration-500"
+          style={{
+            width: `${
+              navItems[hoverIndex !== null ? hoverIndex : activeIndex].width
+            }px`,
+            left: `${
+              navItems[hoverIndex !== null ? hoverIndex : activeIndex].left - 50
+            }px`,
+          }}
+        ></div>
+      </nav>
     </div>
   );
 };

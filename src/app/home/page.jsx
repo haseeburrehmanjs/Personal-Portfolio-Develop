@@ -1,5 +1,5 @@
-import HereSection from "@/app/components/HereSection";
 import React from "react";
+import HereSection from "../components/HereSection";
 
 const Home = () => {
   return (

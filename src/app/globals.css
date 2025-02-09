@@ -8,10 +8,10 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* :root {
     --background: black;
     --foreground: #ededed;
-  }
+  } */
 }
 
 body {
@@ -26,9 +26,16 @@ body {
   clip-path: polygon(0 0, 100% 0, 85% 100%, 14% 100%);
 }
 
-.NavbarClipPathShadowHere {
-  background: black;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF2600;
+  border-radius: 10px;
 }
